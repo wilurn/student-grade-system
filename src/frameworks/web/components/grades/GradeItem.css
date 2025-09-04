@@ -1,0 +1,259 @@
+/* GradeItem Component Styles */
+
+.grade-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease;
+}
+
+.grade-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.grade-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.course-info {
+  flex: 1;
+}
+
+.course-code {
+  margin: 0 0 4px 0;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #333;
+}
+
+.course-name {
+  margin: 0;
+  color: #666;
+  font-size: 0.9em;
+}
+
+.grade-display {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.grade-value {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.grade-points {
+  font-size: 0.8em;
+  color: #666;
+}
+
+/* Grade color classes */
+.grade-excellent {
+  border-left: 4px solid #4caf50;
+}
+
+.grade-excellent .grade-value {
+  color: #4caf50;
+}
+
+.grade-good {
+  border-left: 4px solid #2196f3;
+}
+
+.grade-good .grade-value {
+  color: #2196f3;
+}
+
+.grade-satisfactory {
+  border-left: 4px solid #ff9800;
+}
+
+.grade-satisfactory .grade-value {
+  color: #ff9800;
+}
+
+.grade-poor {
+  border-left: 4px solid #ff5722;
+}
+
+.grade-poor .grade-value {
+  color: #ff5722;
+}
+
+.grade-fail {
+  border-left: 4px solid #f44336;
+}
+
+.grade-fail .grade-value {
+  color: #f44336;
+}
+
+.grade-item-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.academic-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  flex: 1;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  min-width: 80px;
+}
+
+.info-label {
+  font-size: 0.8em;
+  color: #666;
+  margin-bottom: 2px;
+}
+
+.info-value {
+  font-weight: 500;
+  color: #333;
+}
+
+.info-value.passing {
+  color: #4caf50;
+}
+
+.info-value.not-passing {
+  color: #f44336;
+}
+
+.correction-section {
+  display: flex;
+  align-items: center;
+}
+
+.correction-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+.correction-status.loading {
+  background-color: #f5f5f5;
+  color: #666;
+}
+
+.correction-status.not-eligible {
+  background-color: #fafafa;
+  color: #999;
+}
+
+.correction-status.pending {
+  background-color: #fff3e0;
+  color: #e65100;
+  border: 1px solid #ffcc02;
+}
+
+.correction-status.approved {
+  background-color: #e8f5e8;
+  color: #2e7d32;
+  border: 1px solid #4caf50;
+}
+
+.correction-status.rejected {
+  background-color: #ffebee;
+  color: #c62828;
+  border: 1px solid #f44336;
+}
+
+.correction-status.max-attempts {
+  background-color: #fafafa;
+  color: #666;
+  border: 1px solid #e0e0e0;
+}
+
+.correction-status.cannot-request {
+  background-color: #f5f5f5;
+  color: #666;
+}
+
+.status-text {
+  font-weight: 500;
+}
+
+.status-detail {
+  font-size: 0.8em;
+  color: inherit;
+  opacity: 0.8;
+}
+
+.correction-request-button,
+.correction-resubmit-button {
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.correction-request-button:hover,
+.correction-resubmit-button:hover {
+  background-color: #1976d2;
+}
+
+.correction-request-button:disabled,
+.correction-resubmit-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.correction-resubmit-button {
+  background-color: #ff9800;
+}
+
+.correction-resubmit-button:hover {
+  background-color: #f57c00;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .grade-item-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .grade-display {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .grade-item-details {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .academic-info {
+    gap: 12px;
+  }
+
+  .info-item {
+    min-width: 60px;
+  }
+}

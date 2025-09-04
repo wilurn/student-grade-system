@@ -1,0 +1,240 @@
+.error-message {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid;
+  margin: 16px 0;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.error-message__content {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  flex: 1;
+}
+
+.error-message__icon {
+  font-size: 20px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.error-message__text {
+  flex: 1;
+}
+
+.error-message__title {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+.error-message__description {
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.error-message__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 16px;
+  flex-shrink: 0;
+}
+
+.error-message__retry-button {
+  background-color: transparent;
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.error-message__retry-button:hover {
+  opacity: 0.8;
+}
+
+.error-message__retry-button:focus {
+  outline: 2px solid;
+  outline-offset: 2px;
+}
+
+.error-message__dismiss-button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.error-message__dismiss-button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.error-message__dismiss-button:focus {
+  outline: 2px solid;
+  outline-offset: 2px;
+}
+
+/* Error type variants */
+.error-message--network {
+  background-color: #fff3cd;
+  border-color: #ffeaa7;
+  color: #856404;
+}
+
+.error-message--network .error-message__retry-button {
+  border-color: #856404;
+  color: #856404;
+}
+
+.error-message--network .error-message__retry-button:focus {
+  outline-color: #856404;
+}
+
+.error-message--network .error-message__dismiss-button:focus {
+  outline-color: #856404;
+}
+
+.error-message--validation {
+  background-color: #fff3cd;
+  border-color: #ffeaa7;
+  color: #856404;
+}
+
+.error-message--validation .error-message__retry-button {
+  border-color: #856404;
+  color: #856404;
+}
+
+.error-message--validation .error-message__retry-button:focus {
+  outline-color: #856404;
+}
+
+.error-message--validation .error-message__dismiss-button:focus {
+  outline-color: #856404;
+}
+
+.error-message--authentication {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  color: #721c24;
+}
+
+.error-message--authentication .error-message__retry-button {
+  border-color: #721c24;
+  color: #721c24;
+}
+
+.error-message--authentication .error-message__retry-button:focus {
+  outline-color: #721c24;
+}
+
+.error-message--authentication .error-message__dismiss-button:focus {
+  outline-color: #721c24;
+}
+
+.error-message--authorization {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  color: #721c24;
+}
+
+.error-message--authorization .error-message__retry-button {
+  border-color: #721c24;
+  color: #721c24;
+}
+
+.error-message--authorization .error-message__retry-button:focus {
+  outline-color: #721c24;
+}
+
+.error-message--authorization .error-message__dismiss-button:focus {
+  outline-color: #721c24;
+}
+
+.error-message--server {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  color: #721c24;
+}
+
+.error-message--server .error-message__retry-button {
+  border-color: #721c24;
+  color: #721c24;
+}
+
+.error-message--server .error-message__retry-button:focus {
+  outline-color: #721c24;
+}
+
+.error-message--server .error-message__dismiss-button:focus {
+  outline-color: #721c24;
+}
+
+.error-message--generic {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  color: #721c24;
+}
+
+.error-message--generic .error-message__retry-button {
+  border-color: #721c24;
+  color: #721c24;
+}
+
+.error-message--generic .error-message__retry-button:focus {
+  outline-color: #721c24;
+}
+
+.error-message--generic .error-message__dismiss-button:focus {
+  outline-color: #721c24;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .error-message {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .error-message__actions {
+    margin-left: 0;
+    justify-content: flex-start;
+  }
+
+  .error-message__content {
+    width: 100%;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .error-message__retry-button,
+  .error-message__dismiss-button {
+    transition: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .error-message {
+    border-width: 2px;
+  }
+
+  .error-message__retry-button {
+    border-width: 2px;
+  }
+}

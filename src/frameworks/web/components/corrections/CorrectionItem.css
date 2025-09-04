@@ -1,0 +1,377 @@
+/* CorrectionItem Component Styles */
+
+.correction-item {
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.correction-item:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.correction-item.clickable {
+  cursor: pointer;
+}
+
+.correction-item.clickable:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Header Section */
+.correction-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.correction-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.course-details {
+  flex: 1;
+}
+
+.course-code {
+  margin: 0 0 0.25rem 0;
+  color: #1f2937;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.course-name {
+  margin: 0 0 0.5rem 0;
+  color: #6b7280;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.correction-title {
+  margin: 0;
+  color: #1f2937;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.semester-info {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.semester,
+.credit-hours {
+  background-color: #f9fafb;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #e5e7eb;
+}
+
+.status-section {
+  display: flex;
+  align-items: flex-start;
+}
+
+/* Status Badges */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.status-icon {
+  font-size: 0.875rem;
+}
+
+.status-pending {
+  background-color: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fbbf24;
+}
+
+.status-approved {
+  background-color: #d1fae5;
+  color: #065f46;
+  border: 1px solid #34d399;
+}
+
+.status-rejected {
+  background-color: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #f87171;
+}
+
+.status-unknown {
+  background-color: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+/* Grade Change Section */
+.grade-change {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.grade-transition {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 700;
+}
+
+.current-grade {
+  background-color: #fee2e2;
+  color: #991b1b;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  border: 1px solid #f87171;
+  font-size: 1rem;
+}
+
+.arrow {
+  color: #6b7280;
+  font-size: 1.25rem;
+}
+
+.requested-grade {
+  background-color: #dbeafe;
+  color: #1e40af;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  border: 1px solid #60a5fa;
+  font-size: 1rem;
+}
+
+.requested-grade-only {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.requested-grade-only .label {
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.requested-grade-only .grade {
+  background-color: #dbeafe;
+  color: #1e40af;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  border: 1px solid #60a5fa;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* Body Section */
+.correction-item-body {
+  margin-bottom: 1.25rem;
+}
+
+.correction-reason,
+.supporting-details {
+  margin-bottom: 1rem;
+}
+
+.reason-label,
+.details-label {
+  margin: 0 0 0.5rem 0;
+  color: #374151;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.reason-text,
+.details-text {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  background-color: #f9fafb;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+}
+
+.reason-text {
+  border-left: 3px solid #3b82f6;
+}
+
+.details-text {
+  border-left: 3px solid #10b981;
+}
+
+/* Footer Section */
+.correction-item-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-top: 1rem;
+  border-top: 1px solid #f3f4f6;
+}
+
+.correction-dates {
+  flex: 1;
+}
+
+.date-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.375rem;
+  font-size: 0.75rem;
+}
+
+.date-item:last-child {
+  margin-bottom: 0;
+}
+
+.date-label {
+  font-weight: 600;
+  color: #374151;
+  min-width: 70px;
+}
+
+.date-value {
+  color: #6b7280;
+}
+
+.days-ago {
+  color: #9ca3af;
+  font-style: italic;
+}
+
+.pending-indicator {
+  display: flex;
+  align-items: center;
+}
+
+.pending-text {
+  background-color: #fef3c7;
+  color: #92400e;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.375rem;
+  border: 1px solid #fbbf24;
+  font-size: 0.75rem;
+  font-weight: 500;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .correction-item {
+    padding: 1rem;
+  }
+
+  .correction-item-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .correction-info {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .grade-change {
+    margin-left: 0;
+    justify-content: flex-start;
+  }
+
+  .grade-transition {
+    gap: 0.5rem;
+  }
+
+  .current-grade,
+  .requested-grade,
+  .requested-grade-only .grade {
+    padding: 0.375rem 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  .semester-info {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .correction-item-footer {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .date-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .date-label {
+    min-width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .correction-item {
+    padding: 0.75rem;
+  }
+
+  .course-code {
+    font-size: 1.125rem;
+  }
+
+  .correction-title {
+    font-size: 1rem;
+  }
+
+  .grade-transition {
+    flex-direction: column;
+    gap: 0.375rem;
+    text-align: center;
+  }
+
+  .arrow {
+    transform: rotate(90deg);
+    font-size: 1rem;
+  }
+
+  .reason-text,
+  .details-text {
+    padding: 0.5rem;
+    font-size: 0.8125rem;
+  }
+}

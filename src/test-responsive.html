@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Design Test</title>
+    <style>
+        /* Import our design system */
+        @import url('./styles/design-system.css');
+        @import url('./styles/responsive-utilities.css');
+        
+        body {
+            margin: 0;
+            padding: var(--spacing-4);
+            font-family: var(--font-family-base);
+            background-color: var(--color-background);
+            color: var(--color-text-primary);
+        }
+        
+        .test-section {
+            margin-bottom: var(--spacing-8);
+            padding: var(--spacing-6);
+            background: var(--color-background-alt);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-base);
+        }
+        
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-4);
+            margin-top: var(--spacing-4);
+        }
+        
+        .test-card {
+            padding: var(--spacing-4);
+            background: var(--color-gray-50);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--color-border);
+        }
+        
+        .button-test {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-2) var(--spacing-4);
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            border: none;
+            border-radius: var(--radius-base);
+            font-size: var(--font-size-base);
+            font-weight: var(--font-weight-medium);
+            cursor: pointer;
+            transition: all var(--transition-base);
+            margin: var(--spacing-2);
+        }
+        
+        .button-test:hover {
+            background-color: var(--color-primary-hover);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        @media (max-width: 479px) {
+            .button-test {
+                width: 100%;
+                margin: var(--spacing-1) 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Responsive Design System Test</h1>
+        
+        <div class="test-section">
+            <h2>Typography Scale</h2>
+            <h1 class="text-4xl font-bold">Heading 1 - 4XL Bold</h1>
+            <h2 class="text-3xl font-semibold">Heading 2 - 3XL Semibold</h2>
+            <h3 class="text-2xl font-medium">Heading 3 - 2XL Medium</h3>
+            <h4 class="text-xl font-medium">Heading 4 - XL Medium</h4>
+            <p class="text-base">Body text - Base size with normal line height</p>
+            <p class="text-sm text-secondary">Small text - Secondary color</p>
+        </div>
+        
+        <div class="test-section">
+            <h2>Color System</h2>
+            <div class="test-grid">
+                <div class="test-card" style="background-color: var(--color-primary); color: var(--color-white);">
+                    Primary Color
+                </div>
+                <div class="test-card" style="background-color: var(--color-success); color: var(--color-white);">
+                    Success Color
+                </div>
+                <div class="test-card" style="background-color: var(--color-warning); color: var(--color-white);">
+                    Warning Color
+                </div>
+                <div class="test-card" style="background-color: var(--color-danger); color: var(--color-white);">
+                    Danger Color
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2>Responsive Grid</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="test-card">
+                    <h3>Card 1</h3>
+                    <p>This grid adapts: 1 column on mobile, 2 on tablet, 3 on desktop</p>
+                </div>
+                <div class="test-card">
+                    <h3>Card 2</h3>
+                    <p>Resize your browser to see the responsive behavior</p>
+                </div>
+                <div class="test-card">
+                    <h3>Card 3</h3>
+                    <p>The spacing and typography also adapt to screen size</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2>Interactive Elements</h2>
+            <div class="flex flex-wrap gap-4">
+                <button class="button-test">Primary Button</button>
+                <button class="button-test" style="background-color: var(--color-secondary);">Secondary Button</button>
+                <button class="button-test" style="background-color: var(--color-success);">Success Button</button>
+                <button class="button-test" style="background-color: var(--color-danger);">Danger Button</button>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2>Responsive Utilities</h2>
+            <div class="xs:hidden sm:block md:flex lg:grid lg:grid-cols-2 gap-4">
+                <div class="test-card">
+                    <h3>Responsive Visibility</h3>
+                    <p class="xs:text-center sm:text-left md:text-right lg:text-center">
+                        This content changes alignment based on screen size
+                    </p>
+                </div>
+                <div class="test-card lg:block hidden">
+                    <h3>Desktop Only</h3>
+                    <p>This card only appears on large screens</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2>Spacing System</h2>
+            <div class="p-4 m-2" style="background-color: var(--color-primary-light);">
+                <div class="p-2 m-1" style="background-color: var(--color-background-alt);">
+                    Nested spacing using design system variables
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Add some interactivity to test hover states
+        document.querySelectorAll('.button-test').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Button clicked! Responsive design is working.');
+            });
+        });
+        
+        // Display current viewport size
+        function updateViewportInfo() {
+            const width = window.innerWidth;
+            let breakpoint = 'xs';
+            if (width >= 1280) breakpoint = 'xl';
+            else if (width >= 1024) breakpoint = 'lg';
+            else if (width >= 768) breakpoint = 'md';
+            else if (width >= 480) breakpoint = 'sm';
+            
+            document.title = `Responsive Test - ${breakpoint} (${width}px)`;
+        }
+        
+        updateViewportInfo();
+        window.addEventListener('resize', updateViewportInfo);
+    </script>
+</body>
+</html>

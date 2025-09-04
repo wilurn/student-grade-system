@@ -18,7 +18,15 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": "src",
+    "paths": {
+      "@entities/*": ["entities/*"],
+      "@usecases/*": ["usecases/*"],
+      "@adapters/*": ["adapters/*"],
+      "@frameworks/*": ["frameworks/*"],
+      "@shared/*": ["shared/*"]
+    }
   },
   "include": [
     "src"

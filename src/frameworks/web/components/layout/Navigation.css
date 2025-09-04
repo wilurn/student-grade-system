@@ -1,0 +1,308 @@
+/* Navigation Component Styles */
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
+.navigation__toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  gap: 3px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.navigation__toggle:hover,
+.navigation__toggle:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+  outline: none;
+}
+
+.navigation__toggle:focus-visible {
+  outline: 2px solid #3498db;
+  outline-offset: 2px;
+}
+
+.navigation__toggle-line {
+  width: 20px;
+  height: 2px;
+  background-color: currentColor;
+  transition: all 0.3s ease;
+  border-radius: 1px;
+}
+
+.navigation__list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1rem;
+  align-items: center;
+}
+
+.navigation__item {
+  margin: 0;
+  position: relative;
+}
+
+.navigation__link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  color: inherit;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  white-space: nowrap;
+}
+
+.navigation__link:hover,
+.navigation__link:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+  outline: none;
+  transform: translateY(-1px);
+}
+
+.navigation__link:focus-visible {
+  outline: 2px solid #3498db;
+  outline-offset: 2px;
+}
+
+.navigation__link:active {
+  transform: translateY(0);
+}
+
+.navigation__icon {
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+}
+
+.navigation__label {
+  font-weight: 500;
+}
+
+/* Active state styling */
+.navigation__item--active .navigation__link {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #3498db;
+  font-weight: 600;
+}
+
+.navigation__item--active .navigation__link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 2px;
+  background-color: #3498db;
+  border-radius: 1px;
+}
+
+.navigation__item--active .navigation__link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Collapsed state (for sidebar navigation) */
+.navigation--collapsed .navigation__list {
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.navigation--collapsed .navigation__link {
+  width: 100%;
+  justify-content: flex-start;
+  padding: 1rem;
+}
+
+.navigation--collapsed .navigation__item--active .navigation__link::after {
+  left: 0;
+  transform: none;
+  width: 3px;
+  height: 100%;
+  top: 0;
+  bottom: auto;
+}
+
+/* Mobile styles */
+.navigation--mobile {
+  position: relative;
+}
+
+.navigation--mobile .navigation__toggle {
+  display: flex;
+}
+
+.navigation--mobile .navigation__list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: inherit;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 8px 8px;
+  flex-direction: column;
+  gap: 0;
+  padding: 0.5rem 0;
+  transform: translateY(-10px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  min-width: 200px;
+}
+
+.navigation--mobile.navigation--open .navigation__list {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.navigation--mobile .navigation__link {
+  width: 100%;
+  justify-content: flex-start;
+  padding: 0.75rem 1rem;
+  border-radius: 0;
+}
+
+.navigation--mobile .navigation__item--active .navigation__link::after {
+  left: 0;
+  transform: none;
+  width: 3px;
+  height: 100%;
+  top: 0;
+  bottom: auto;
+}
+
+/* Mobile toggle animation */
+.navigation--mobile.navigation--open .navigation__toggle-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navigation--mobile.navigation--open .navigation__toggle-line:nth-child(2) {
+  opacity: 0;
+}
+
+.navigation--mobile.navigation--open .navigation__toggle-line:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+  .navigation:not(.navigation--mobile) {
+    /* Auto-convert to mobile on small screens */
+    position: relative;
+  }
+
+  .navigation:not(.navigation--mobile) .navigation__list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: inherit;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 8px 8px;
+    flex-direction: column;
+    gap: 0;
+    padding: 0.5rem 0;
+    transform: translateY(-10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+
+  .navigation__link {
+    padding: 0.75rem 1rem;
+  }
+
+  .navigation__item--active .navigation__link::after {
+    left: 0;
+    transform: none;
+    width: 3px;
+    height: 100%;
+    top: 0;
+    bottom: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .navigation--mobile .navigation__list {
+    left: -1rem;
+    right: -1rem;
+    border-radius: 0;
+  }
+
+  .navigation__link {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .navigation__icon {
+    font-size: 1rem;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .navigation__item--active .navigation__link {
+    border: 2px solid currentColor;
+  }
+
+  .navigation__link:focus {
+    outline: 3px solid currentColor;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .navigation__link,
+  .navigation__toggle-line,
+  .navigation__list {
+    transition: none;
+  }
+
+  .navigation__link:hover {
+    transform: none;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .navigation--mobile .navigation__list {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Print styles */
+@media print {
+  .navigation__toggle {
+    display: none;
+  }
+
+  .navigation__list {
+    position: static !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    box-shadow: none !important;
+    flex-direction: row !important;
+    gap: 1rem !important;
+  }
+}

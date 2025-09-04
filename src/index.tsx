@@ -3,13 +3,24 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { AppProvider } from './frameworks/web/contexts';
+import { getContainer } from './frameworks/di/container';
+
+// Get dependency injection container
+const container = getContainer();
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <AppProvider
+      authUseCase={container.authUseCase}
+      gradeUseCase={container.gradeUseCase}
+      tokenStorage={container.tokenStorage}
+    >
+      <App />
+    </AppProvider>
   </React.StrictMode>
 );
 
